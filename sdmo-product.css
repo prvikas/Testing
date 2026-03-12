@@ -1,46 +1,57 @@
-/* SDMO Product Layer - SDMO Brand Colors & Theme */
+/* OLB Product Layer - BECU Brand Colors & Theme */
 /* ========================================================================
-   SDMO PRODUCT CUSTOMIZATION
-   Replace all color values below with SDMO-specific brand colors
-   These are currently set to BECU defaults as a template
+   OLB/BECU SPECIFIC STYLING - DO NOT SHARE WITH OTHER PRODUCTS
+   This layer contains BECU's specific brand colors and styles
+   SDMO and other products should use their own product CSS file
 
    REFACTORED: Generic semantic classes (.text-foreground-default, etc.)
    have been moved to common.css to eliminate selector conflicts.
-   This file now contains ONLY CSS variables and SDMO-specific classes.
+   This file now contains ONLY CSS variables and OLB-specific classes.
    ======================================================================== */
 
 @layer product-theme {
 
-/* CUSTOMIZE: Replace these color hex values with SDMO brand colors */
+/* Define OLB brand colors as CSS variables for consistency */
 :root {
   /* Semantic variable mapping for product-agnostic classes */
-  /* CUSTOMIZE ALL VALUES BELOW FOR SDMO BRAND */
-  --foreground-default: #0d141c; /* CUSTOMIZE */
-  --foreground-heading: #0d141c; /* CUSTOMIZE */
-  --foreground-copy: #192838; /* CUSTOMIZE */
-  --foreground-copy-support: #4d5f69; /* CUSTOMIZE */
-  --foreground-brand: #007c89; /* CUSTOMIZE */
-  --on-background-brand: #ffffff; /* CUSTOMIZE */
-  --link-default: #007c89; /* CUSTOMIZE */
-  --error-default: #6e3a32; /* CUSTOMIZE */
+  --foreground-default: #0d141c;
+  --foreground-heading: #0d141c;
+  --foreground-copy: #192838;
+  --foreground-copy-support: #4d5f69;
+  --foreground-brand: #007c89;
+  --on-background-brand: #ffffff;
+  --link-default: #007c89;
+  --error-default: #6e3a32;
 
-  --background-page: #ffffff; /* CUSTOMIZE */
-  --background-surface-1: #ffffff; /* CUSTOMIZE */
-  --background-surface-2: #f4f5f5; /* CUSTOMIZE */
+  --background-page: #ffffff;
+  --background-surface-1: #ffffff;
+  --background-surface-2: #f4f5f5;
 
-  --border-default: #7f909a; /* CUSTOMIZE */
-  --border-subtle: #eaebec; /* CUSTOMIZE */
-  --control-focus: #7f909a; /* CUSTOMIZE */
+  --border-default: #7f909a;
+  --border-subtle: #eaebec;
+  --control-focus: #7f909a;
 
-  /* SDMO-specific named colors (for explicit SDMO references) */
-  --sdmo-primary-brand: #007c89; /* CUSTOMIZE: SDMO primary brand color */
-  --sdmo-text-heading: #0d141c; /* CUSTOMIZE: SDMO heading text color */
-  --sdmo-text-body: #192838; /* CUSTOMIZE: SDMO body text color */
-  --sdmo-text-support: #4d5f69; /* CUSTOMIZE: SDMO support text color */
-  --sdmo-text-error: #6e3a32; /* CUSTOMIZE: SDMO error text color */
-  --sdmo-bg-surface: #f4f5f5; /* CUSTOMIZE: SDMO surface background */
-  --sdmo-border-color: #7f909a; /* CUSTOMIZE: SDMO border color */
-  --spinner-color: var(--sdmo-primary-brand);
+  /* OLB-specific named colors (legacy support) */
+  --olb-primary-brand: #007c89;
+  --olb-text-heading: #0d141c;
+  --olb-text-body: #192838;
+  --olb-text-support: #4d5f69;
+  --olb-text-error: #6e3a32;
+  --olb-bg-surface: #f4f5f5;
+  --olb-border-color: #7f909a;
+  --action-blue: #4470d6;
+
+  /* Additional OLB brand colors */
+  --becu-red: #d12a2e;
+  --dark-teal: #005460;
+  --error-red: #ab111a;
+  --error-bg: #f8d7da;
+  --error-border: #f1aeb5;
+  --error-text: #721c24;
+  --divider-color: #d5d7d9;
+  --warm-grey: #e3e1db;
+  --rain-grey: #eaebec;
+  --spinner-color: var(--olb-primary-brand);
 
   /* Utility colors */
   --bg-white: #ffffff;
@@ -51,8 +62,6 @@
   --gray-dark-hover: #333333;
   --alert-dark: #654f0b;
   --error-red-alt: #dc3545;
-  --rain-grey: #eaebec;
-  --error-border: #f1aeb5;
 
   /* Shadow and overlay colors */
   --overlay-dark: rgba(0, 0, 0, 0.5);
@@ -61,15 +70,15 @@
   --shadow-dark: rgba(0, 0, 0, 0.3);
 
   /* Alert/Info background colors (replacing arbitrary Tailwind values) */
-  --info-bg: #ebf2fa;  /* CUSTOMIZE */
-  --warning-bg: #fff0d4;  /* CUSTOMIZE */
-  --alert-bg: #fce6da;  /* CUSTOMIZE */
-  --focus-dark: #0d3960;  /* CUSTOMIZE */
+  --info-bg: #ebf2fa;
+  --warning-bg: #fff0d4;
+  --alert-bg: #fce6da;
+  --focus-dark: #0d3960;
 }
 
 /* ========================================================================
-   SDMO SEMANTIC UTILITY CLASSES
-   Product-agnostic semantic classes that use SDMO color variables
+   OLB-SPECIFIC UTILITY CLASSES
+   These are OLB-exclusive classes not shared with other products
    ======================================================================== */
 
 /* Semantic utility classes for alert/warning styling */
@@ -101,163 +110,74 @@
   outline-color: var(--focus-dark);
 }
 
-/* Product-agnostic brand dimension classes (shared with OLB) */
+.outline-offset-\[-2px\] {
+  outline-offset: -2px;
+}
+
+/* Product-agnostic brand dimension classes (shared with SDMO) */
 .text-brand-hero {
-  font-size: 40px; /* CUSTOMIZE for SDMO brand */
+  font-size: 40px;
 }
 
 .leading-brand-hero {
-  line-height: 56px; /* CUSTOMIZE for SDMO brand */
+  line-height: 56px;
 }
 
 .w-brand-logo {
-  width: 129px; /* CUSTOMIZE for SDMO brand */
+  width: 129px;
 }
 
 .h-brand-logo {
-  height: 40.08px; /* CUSTOMIZE for SDMO brand */
+  height: 40.08px;
 }
 
 .rounded-brand-br {
-  border-bottom-right-radius: 48px; /* CUSTOMIZE for SDMO brand */
+  border-bottom-right-radius: 48px;
 }
 
 /* Responsive brand heading sizes */
 @media (min-width: 640px) {
   .sm\:text-brand-subhero {
-    font-size: 28px; /* CUSTOMIZE for SDMO brand */
+    font-size: 28px;
   }
 
   .sm\:text-brand-hero-lg {
-    font-size: 56px; /* CUSTOMIZE for SDMO brand */
+    font-size: 56px;
   }
 
   .sm\:leading-brand-hero {
-    line-height: 56px; /* CUSTOMIZE for SDMO brand */
+    line-height: 56px;
   }
 }
 
-/* SDMO-specific aliases (for SDMO-only pages) */
-.text-sdmo-hero { font-size: 40px; /* CUSTOMIZE */ }
-.leading-sdmo-hero { line-height: 56px; /* CUSTOMIZE */ }
-.w-sdmo-logo { width: 129px; /* CUSTOMIZE */ }
-.h-sdmo-logo { height: 40.08px; /* CUSTOMIZE */ }
-.rounded-sdmo-br { border-bottom-right-radius: 48px; /* CUSTOMIZE */ }
+/* OLB-specific aliases (for OLB-only pages) */
+.text-olb-hero { font-size: 40px; }
+.leading-olb-hero { line-height: 56px; }
+.w-olb-logo { width: 129px; }
+.h-olb-logo { height: 40.08px; }
+.rounded-olb-br { border-bottom-right-radius: 48px; }
 
 @media (min-width: 640px) {
-  .sm\:text-sdmo-subhero { font-size: 28px; /* CUSTOMIZE */ }
-  .sm\:text-sdmo-hero-lg { font-size: 56px; /* CUSTOMIZE */ }
-  .sm\:leading-sdmo-hero { line-height: 56px; /* CUSTOMIZE */ }
-}
-
-/* ========================================================================
-   SDMO-NAMESPACED UTILITY CLASSES
-   These classes use sdmo-specific variables for explicit SDMO styling
-   Generic classes (.text-foreground-default) are now in common.css
-   ======================================================================== */
-
-/* SDMO-namespaced text color utilities */
-.sdmo-text-foreground-default {
-  color: var(--sdmo-text-heading) !important;
-}
-
-.sdmo-text-foreground-heading {
-  color: var(--sdmo-text-heading) !important;
-}
-
-.sdmo-text-foreground-copy {
-  color: var(--sdmo-text-body) !important;
-}
-
-.sdmo-text-foreground-copy-support {
-  color: var(--sdmo-text-support) !important;
-}
-
-.sdmo-text-foreground-brand {
-  color: var(--sdmo-primary-brand) !important;
-}
-
-.sdmo-text-on-background-brand {
-  color: var(--bg-white) !important;
-}
-
-.sdmo-text-link-default {
-  color: var(--sdmo-primary-brand) !important;
-}
-
-.sdmo-text-error-default {
-  color: var(--sdmo-text-error) !important;
-}
-
-/* SDMO-namespaced background color utilities */
-.sdmo-bg-background-page {
-  background-color: var(--bg-white) !important;
-}
-
-.sdmo-bg-background-surface-1 {
-  background-color: var(--bg-white) !important;
-}
-
-.sdmo-bg-background-surface-2 {
-  background-color: var(--sdmo-bg-surface) !important;
-}
-
-.sdmo-bg-link-default {
-  background-color: var(--sdmo-primary-brand) !important;
-}
-
-/* SDMO-namespaced border color utilities */
-.sdmo-border-default {
-  border-color: var(--sdmo-border-color) !important;
-}
-
-.sdmo-border-subtle {
-  border-color: var(--rain-grey) !important;
-}
-
-/* SDMO-namespaced border for interactive elements */
-.sdmo-border-link-default {
-  border-color: var(--sdmo-primary-brand) !important;
-}
-
-/* SDMO-namespaced focus outline */
-.sdmo-focus-control-focus:focus {
-  outline-color: var(--sdmo-border-color) !important;
+  .sm\:text-olb-subhero { font-size: 28px; }
+  .sm\:text-olb-hero-lg { font-size: 56px; }
+  .sm\:leading-olb-hero { line-height: 56px; }
 }
 
 /* ========================================================================
    PRODUCT-SPECIFIC HOVER & INTERACTIVE STATES
    ======================================================================== */
 
-/* Hover states for product colors - SDMO namespaced */
-.sdmo\:hover\:bg-background-surface-2:hover {
-  background-color: var(--sdmo-bg-surface);
+/* Hover states for OLB-namespaced product colors */
+.olb-bg-background-surface-2:hover {
+  background-color: var(--olb-bg-surface);
 }
 
-.sdmo\:hover\:text-foreground-brand:hover {
-  color: var(--sdmo-primary-brand);
+.olb-text-foreground-brand:hover {
+  color: var(--olb-primary-brand);
 }
 
-/* Standard hover states for HTML hover attribute compatibility */
-.sdmo-bg-background-surface-2:hover {
-  background-color: var(--sdmo-bg-surface);
-}
-
-.sdmo-text-foreground-brand:hover {
-  color: var(--sdmo-primary-brand);
-}
-
-/* Utility hover classes for buttons and links */
-.hover\:sdmo-bg-background-surface-2:hover {
-  background-color: var(--sdmo-bg-surface);
-}
-
-.hover\:sdmo-text-foreground-brand:hover {
-  color: var(--sdmo-primary-brand);
-}
-
-.hover\:sdmo-bg-link-default:hover {
-  background-color: var(--sdmo-primary-brand);
+.olb-bg-link-default:hover {
+  background-color: var(--olb-primary-brand);
 }
 
 } /* End @layer product-theme */
