@@ -57,8 +57,9 @@
     display: none;
   }
 
-  /* Remove default link underline */
+  /* Remove default link underline and set default color */
   a {
+    color: inherit;
     text-decoration: none;
   }
 
