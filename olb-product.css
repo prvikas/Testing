@@ -1,15 +1,13 @@
-/* OLB Product Layer - BECU Brand Colors & Theme */
+/* OLB Product - BECU Brand Colors & Theme */
 /* ========================================================================
    OLB/BECU SPECIFIC STYLING - DO NOT SHARE WITH OTHER PRODUCTS
-   This layer contains BECU's specific brand colors and styles
+   This contains BECU's specific brand colors and styles
    SDMO and other products should use their own product CSS file
 
    REFACTORED: Generic semantic classes (.text-foreground-default, etc.)
    have been moved to common.css to eliminate selector conflicts.
    This file now contains ONLY CSS variables and OLB-specific classes.
    ======================================================================== */
-
-@layer product-theme {
 
 /* Define OLB brand colors as CSS variables for consistency */
 :root {
@@ -110,11 +108,7 @@
   outline-color: var(--focus-dark);
 }
 
-.outline-offset-\[-2px\] {
-  outline-offset: -2px;
-}
-
-/* Product-agnostic brand dimension classes (shared with SDMO) */
+/* Product-agnostic brand dimension classes */
 .text-brand-hero {
   font-size: 40px;
 }
@@ -179,5 +173,3 @@
 .olb-bg-link-default:hover {
   background-color: var(--olb-primary-brand);
 }
-
-} /* End @layer product-theme */
