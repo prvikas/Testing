@@ -1,0 +1,183 @@
+/* OLB Product Layer - BECU Brand Colors & Theme */
+/* ========================================================================
+   OLB/BECU SPECIFIC STYLING - DO NOT SHARE WITH OTHER PRODUCTS
+   This layer contains BECU's specific brand colors and styles
+   SDMO and other products should use their own product CSS file
+
+   REFACTORED: Generic semantic classes (.text-foreground-default, etc.)
+   have been moved to common.css to eliminate selector conflicts.
+   This file now contains ONLY CSS variables and OLB-specific classes.
+   ======================================================================== */
+
+@layer product-theme {
+
+/* Define OLB brand colors as CSS variables for consistency */
+:root {
+  /* Semantic variable mapping for product-agnostic classes */
+  --foreground-default: #0d141c;
+  --foreground-heading: #0d141c;
+  --foreground-copy: #192838;
+  --foreground-copy-support: #4d5f69;
+  --foreground-brand: #007c89;
+  --on-background-brand: #ffffff;
+  --link-default: #007c89;
+  --error-default: #6e3a32;
+
+  --background-page: #ffffff;
+  --background-surface-1: #ffffff;
+  --background-surface-2: #f4f5f5;
+
+  --border-default: #7f909a;
+  --border-subtle: #eaebec;
+  --control-focus: #7f909a;
+
+  /* OLB-specific named colors (legacy support) */
+  --olb-primary-brand: #007c89;
+  --olb-text-heading: #0d141c;
+  --olb-text-body: #192838;
+  --olb-text-support: #4d5f69;
+  --olb-text-error: #6e3a32;
+  --olb-bg-surface: #f4f5f5;
+  --olb-border-color: #7f909a;
+  --action-blue: #4470d6;
+
+  /* Additional OLB brand colors */
+  --becu-red: #d12a2e;
+  --dark-teal: #005460;
+  --error-red: #ab111a;
+  --error-bg: #f8d7da;
+  --error-border: #f1aeb5;
+  --error-text: #721c24;
+  --divider-color: #d5d7d9;
+  --warm-grey: #e3e1db;
+  --rain-grey: #eaebec;
+  --spinner-color: var(--olb-primary-brand);
+
+  /* Utility colors */
+  --bg-white: #ffffff;
+  --text-black: #000000;
+  --gray-disabled: #9ca3af;
+  --gray-light: #d1d5db;
+  --gray-dark: #333333;
+  --gray-dark-hover: #333333;
+  --alert-dark: #654f0b;
+  --error-red-alt: #dc3545;
+
+  /* Shadow and overlay colors */
+  --overlay-dark: rgba(0, 0, 0, 0.5);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.2);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+
+  /* Alert/Info background colors (replacing arbitrary Tailwind values) */
+  --info-bg: #ebf2fa;
+  --warning-bg: #fff0d4;
+  --alert-bg: #fce6da;
+  --focus-dark: #0d3960;
+}
+
+/* ========================================================================
+   OLB-SPECIFIC UTILITY CLASSES
+   These are OLB-exclusive classes not shared with other products
+   ======================================================================== */
+
+/* Semantic utility classes for alert/warning styling */
+.bg-warning {
+  background-color: var(--warning-bg);
+}
+
+.bg-info {
+  background-color: var(--info-bg);
+}
+
+.bg-alert {
+  background-color: var(--alert-bg);
+}
+
+.border-alert {
+  border-color: var(--alert-dark);
+}
+
+.outline-alert {
+  outline-color: var(--alert-dark);
+}
+
+.border-info {
+  border-color: var(--focus-dark);
+}
+
+.outline-info {
+  outline-color: var(--focus-dark);
+}
+
+.outline-offset-\[-2px\] {
+  outline-offset: -2px;
+}
+
+/* Product-agnostic brand dimension classes (shared with SDMO) */
+.text-brand-hero {
+  font-size: 40px;
+}
+
+.leading-brand-hero {
+  line-height: 56px;
+}
+
+.w-brand-logo {
+  width: 129px;
+}
+
+.h-brand-logo {
+  height: 40.08px;
+}
+
+.rounded-brand-br {
+  border-bottom-right-radius: 48px;
+}
+
+/* Responsive brand heading sizes */
+@media (min-width: 640px) {
+  .sm\:text-brand-subhero {
+    font-size: 28px;
+  }
+
+  .sm\:text-brand-hero-lg {
+    font-size: 56px;
+  }
+
+  .sm\:leading-brand-hero {
+    line-height: 56px;
+  }
+}
+
+/* OLB-specific aliases (for OLB-only pages) */
+.text-olb-hero { font-size: 40px; }
+.leading-olb-hero { line-height: 56px; }
+.w-olb-logo { width: 129px; }
+.h-olb-logo { height: 40.08px; }
+.rounded-olb-br { border-bottom-right-radius: 48px; }
+
+@media (min-width: 640px) {
+  .sm\:text-olb-subhero { font-size: 28px; }
+  .sm\:text-olb-hero-lg { font-size: 56px; }
+  .sm\:leading-olb-hero { line-height: 56px; }
+}
+
+/* ========================================================================
+   PRODUCT-SPECIFIC HOVER & INTERACTIVE STATES
+   ======================================================================== */
+
+/* Hover states for OLB-namespaced product colors */
+.olb-bg-background-surface-2:hover {
+  background-color: var(--olb-bg-surface);
+}
+
+.olb-text-foreground-brand:hover {
+  color: var(--olb-primary-brand);
+}
+
+.olb-bg-link-default:hover {
+  background-color: var(--olb-primary-brand);
+}
+
+} /* End @layer product-theme */
