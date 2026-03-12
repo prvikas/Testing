@@ -3,13 +3,11 @@
 /* COMPREHENSIVE UTILITY SET FOR ALL BECU PAGES */
 
 /* Define cascade layers for predictable specificity */
-@layer reset, base, utilities, components, product-theme, overrides;
 
 /* ========================================================================
    RESET LAYER - CSS Resets
    ======================================================================== */
 
-@layer reset {
   *,
   *::before,
   *::after {
@@ -18,13 +16,11 @@
     border-style: solid;
     border-color: currentColor;
   }
-}
 
 /* ========================================================================
    BASE LAYER - HTML Element Defaults
    ======================================================================== */
 
-@layer base {
   html {
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
@@ -65,13 +61,11 @@
   a {
     text-decoration: none;
   }
-}
 
 /* ========================================================================
    UTILITIES LAYER - Tailwind Utilities & Product-Agnostic Semantic Classes
    ======================================================================== */
 
-@layer utilities {
 
 /* DISPLAY UTILITIES */
 
@@ -2011,4 +2005,3 @@
   top: 1em;
 }
 
-} /* End @layer utilities */
