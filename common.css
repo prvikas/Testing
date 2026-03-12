@@ -1929,6 +1929,81 @@
 }
 
 /* ========================================================================
+   ALERT & WARNING UTILITIES
+   Alert box, info box, warning box styling
+   ======================================================================== */
+
+/* Semantic utility classes for alert/warning styling */
+.bg-warning {
+  background-color: var(--warning-bg, #fff0d4) !important;
+}
+
+.bg-info {
+  background-color: var(--info-bg, #ebf2fa) !important;
+}
+
+.bg-alert {
+  background-color: var(--alert-bg, #fce6da) !important;
+}
+
+.border-alert {
+  border-color: var(--alert-dark, #654f0b) !important;
+}
+
+.outline-alert {
+  outline-color: var(--alert-dark, #654f0b) !important;
+}
+
+.border-info {
+  border-color: var(--focus-dark, #0d3960) !important;
+}
+
+.outline-info {
+  outline-color: var(--focus-dark, #0d3960) !important;
+}
+
+/* ========================================================================
+   BRAND DIMENSION UTILITIES
+   Brand-specific sizing for logos, headings, and components
+   ======================================================================== */
+
+/* Product-agnostic brand dimension classes */
+.text-brand-hero {
+  font-size: 40px;
+}
+
+.leading-brand-hero {
+  line-height: 56px;
+}
+
+.w-brand-logo {
+  width: 129px;
+}
+
+.h-brand-logo {
+  height: 40.08px;
+}
+
+.rounded-brand-br {
+  border-bottom-right-radius: 48px;
+}
+
+/* Responsive brand heading sizes */
+@media (min-width: 640px) {
+  .sm\:text-brand-subhero {
+    font-size: 28px;
+  }
+
+  .sm\:text-brand-hero-lg {
+    font-size: 56px;
+  }
+
+  .sm\:leading-brand-hero {
+    line-height: 56px;
+  }
+}
+
+/* ========================================================================
    ACCESSIBILITY UTILITIES
    Consolidated from: common.css, ui/html/common.css, loading.css, davinci-styles.css
    ======================================================================== */
