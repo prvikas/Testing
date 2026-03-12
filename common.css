@@ -62,6 +62,12 @@
     text-decoration: none;
   }
 
+  /* Global focus-visible outline */
+  *:focus-visible {
+    outline: 2px solid #007c89;
+    outline-offset: 2px;
+  }
+
 /* ========================================================================
    UTILITIES LAYER - Tailwind Utilities & Product-Agnostic Semantic Classes
    ======================================================================== */
@@ -1855,70 +1861,70 @@
 
 /* Text color utilities - use product-defined variables */
 .text-foreground-default {
-  color: var(--foreground-default, var(--olb-text-heading, #0d141c));
+  color: var(--foreground-default, var(--olb-text-heading, #0d141c)) !important;
 }
 
 .text-foreground-heading {
-  color: var(--foreground-heading, var(--olb-text-heading, #0d141c));
+  color: var(--foreground-heading, var(--olb-text-heading, #0d141c)) !important;
 }
 
 .text-foreground-copy {
-  color: var(--foreground-copy, var(--olb-text-body, #192838));
+  color: var(--foreground-copy, var(--olb-text-body, #192838)) !important;
 }
 
 .text-foreground-copy-support {
-  color: var(--foreground-copy-support, var(--olb-text-support, #4d5f69));
+  color: var(--foreground-copy-support, var(--olb-text-support, #4d5f69)) !important;
 }
 
 .text-foreground-brand {
-  color: var(--foreground-brand, var(--olb-primary-brand, #007c89));
+  color: var(--foreground-brand, var(--olb-primary-brand, #007c89)) !important;
 }
 
 .text-on-background-brand {
-  color: var(--on-background-brand, var(--bg-white, #ffffff));
+  color: var(--on-background-brand, var(--bg-white, #ffffff)) !important;
 }
 
 .text-link-default {
-  color: var(--link-default, var(--olb-primary-brand, #007c89));
+  color: var(--link-default, var(--olb-primary-brand, #007c89)) !important;
 }
 
 .text-error-default {
-  color: var(--error-default, var(--olb-text-error, #6e3a32));
+  color: var(--error-default, var(--olb-text-error, #6e3a32)) !important;
 }
 
 /* Background color utilities - use product-defined variables */
 .bg-background-page {
-  background-color: var(--background-page, var(--bg-white, #ffffff));
+  background-color: var(--background-page, var(--bg-white, #ffffff)) !important;
 }
 
 .bg-background-surface-1 {
-  background-color: var(--background-surface-1, var(--bg-white, #ffffff));
+  background-color: var(--background-surface-1, var(--bg-white, #ffffff)) !important;
 }
 
 .bg-background-surface-2 {
-  background-color: var(--background-surface-2, var(--olb-bg-surface, #f4f5f5));
+  background-color: var(--background-surface-2, var(--olb-bg-surface, #f4f5f5)) !important;
 }
 
 .bg-link-default {
-  background-color: var(--link-default, var(--olb-primary-brand, #007c89));
+  background-color: var(--link-default, var(--olb-primary-brand, #007c89)) !important;
 }
 
 /* Border color utilities - use product-defined variables */
 .border-default {
-  border-color: var(--border-default, var(--olb-border-color, #7f909a));
+  border-color: var(--border-default, var(--olb-border-color, #7f909a)) !important;
 }
 
 .border-subtle {
-  border-color: var(--border-subtle, var(--rain-grey, #eaebec));
+  border-color: var(--border-subtle, var(--rain-grey, #eaebec)) !important;
 }
 
 .border-error-default {
-  border-color: var(--error-border, #f1aeb5));
+  border-color: var(--error-border, #f1aeb5)) !important;
 }
 
 /* Focus utilities - use product-defined variables */
 .focus-control-focus:focus {
-  outline-color: var(--control-focus, var(--olb-border-color, #7f909a));
+  outline-color: var(--control-focus, var(--olb-border-color, #7f909a)) !important;
 }
 
 /* ========================================================================
