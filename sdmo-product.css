@@ -66,78 +66,9 @@
 }
 
 /* ========================================================================
-   SDMO SEMANTIC UTILITY CLASSES
-   Product-agnostic semantic classes that use SDMO color variables
-   ======================================================================== */
-
-/* Semantic utility classes for alert/warning styling */
-.bg-warning {
-  background-color: var(--warning-bg);
-}
-
-.bg-info {
-  background-color: var(--info-bg);
-}
-
-.bg-alert {
-  background-color: var(--alert-bg);
-}
-
-.border-alert {
-  border-color: var(--alert-dark);
-}
-
-.outline-alert {
-  outline-color: var(--alert-dark);
-}
-
-.border-info {
-  border-color: var(--focus-dark);
-}
-
-.outline-info {
-  outline-color: var(--focus-dark);
-}
-
-/* Product-agnostic brand dimension classes (shared with OLB) */
-.text-brand-hero {
-  font-size: 40px; /* CUSTOMIZE for SDMO brand */
-}
-
-.leading-brand-hero {
-  line-height: 56px; /* CUSTOMIZE for SDMO brand */
-}
-
-.w-brand-logo {
-  width: 129px; /* CUSTOMIZE for SDMO brand */
-}
-
-.h-brand-logo {
-  height: 40.08px; /* CUSTOMIZE for SDMO brand */
-}
-
-.rounded-brand-br {
-  border-bottom-right-radius: 48px; /* CUSTOMIZE for SDMO brand */
-}
-
-/* Responsive brand heading sizes */
-@media (min-width: 640px) {
-  .sm\:text-brand-subhero {
-    font-size: 28px; /* CUSTOMIZE for SDMO brand */
-  }
-
-  .sm\:text-brand-hero-lg {
-    font-size: 56px; /* CUSTOMIZE for SDMO brand */
-  }
-
-  .sm\:leading-brand-hero {
-    line-height: 56px; /* CUSTOMIZE for SDMO brand */
-  }
-}
-
-/* ========================================================================
    SDMO-SPECIFIC CLASSES
-   These are SDMO-exclusive classes not shared with other products
+   NOTE: Generic utilities (.bg-warning, .text-brand-hero, etc.) are in common.css
+   This section contains ONLY SDMO-namespaced aliases for SDMO-only pages
    ======================================================================== */
 
 /* SDMO-specific aliases (for SDMO-only pages) */
