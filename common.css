@@ -51,6 +51,16 @@
     font-family: "Public Sans";
   }
 
+  /* Input elements inherit font properties */
+  input,
+  textarea,
+  select,
+  button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
   /* Password field reveal/clear button - consolidated from multiple files */
   input[type="password"]::-ms-reveal,
   input[type="password"]::-ms-clear {
