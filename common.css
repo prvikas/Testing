@@ -615,9 +615,9 @@
   --tw-translate-x: 100%;
 }
 .transform {
-  transform: var(--tw-translate-x, 0) var(--tw-translate-y, 0)
-    var(--tw-rotate, 0) var(--tw-skew-x, 0) var(--tw-skew-y, 0)
-    var(--tw-scale-x, 1) var(--tw-scale-y, 1);
+  transform: translateX(var(--tw-translate-x, 0)) translateY(var(--tw-translate-y, 0))
+    rotate(var(--tw-rotate, 0deg)) skewX(var(--tw-skew-x, 0deg)) skewY(var(--tw-skew-y, 0deg))
+    scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1));
 }
 
 /* ========================================================================
@@ -932,7 +932,7 @@
   border-color: #dc2626;
 }
 .border-foreground-default {
-  border-color: #0d141c;
+  border-color: var(--foreground-default, #0d141c);
 }
 
 /* Arbitrary border colors */
@@ -1231,7 +1231,19 @@
   text-decoration: none;
 }
 /* Product-specific hover states moved to product CSS files */
-/* (.hover\:bg-background-surface-2:hover, .hover\:text-foreground-brand:hover) */
+/* Hover state utilities */
+.hover\:bg-background-surface-2:hover {
+  background-color: var(--background-surface-2, var(--olb-bg-surface, #f4f5f5)) !important;
+}
+
+.hover\:text-foreground-brand:hover {
+  color: var(--foreground-brand, var(--olb-primary-brand, #007c89)) !important;
+}
+
+.hover\:bg-foreground-brand:hover {
+  background-color: var(--foreground-brand, var(--olb-primary-brand, #007c89)) !important;
+}
+
 .hover\:text-heading:hover {
   color: #192838;
 }
