@@ -813,7 +813,7 @@
   background-color: #d1d5db;
 }
 .bg-gray-900 {
-  background-color: #111827;
+  background-color: rgba(17, 24, 39, var(--tw-bg-opacity, 1));
 }
 .bg-black {
   background-color: var(--text-black);
