@@ -76,73 +76,9 @@
 
 /* ========================================================================
    OLB-SPECIFIC UTILITY CLASSES
-   These are OLB-exclusive classes not shared with other products
+   NOTE: Generic utilities (.bg-warning, .text-brand-hero, etc.) are in common.css
+   This section contains ONLY OLB-namespaced aliases for backward compatibility
    ======================================================================== */
-
-/* Semantic utility classes for alert/warning styling */
-.bg-warning {
-  background-color: var(--warning-bg);
-}
-
-.bg-info {
-  background-color: var(--info-bg);
-}
-
-.bg-alert {
-  background-color: var(--alert-bg);
-}
-
-.border-alert {
-  border-color: var(--alert-dark);
-}
-
-.outline-alert {
-  outline-color: var(--alert-dark);
-}
-
-.border-info {
-  border-color: var(--focus-dark);
-}
-
-.outline-info {
-  outline-color: var(--focus-dark);
-}
-
-/* Product-agnostic brand dimension classes */
-.text-brand-hero {
-  font-size: 40px;
-}
-
-.leading-brand-hero {
-  line-height: 56px;
-}
-
-.w-brand-logo {
-  width: 129px;
-}
-
-.h-brand-logo {
-  height: 40.08px;
-}
-
-.rounded-brand-br {
-  border-bottom-right-radius: 48px;
-}
-
-/* Responsive brand heading sizes */
-@media (min-width: 640px) {
-  .sm\:text-brand-subhero {
-    font-size: 28px;
-  }
-
-  .sm\:text-brand-hero-lg {
-    font-size: 56px;
-  }
-
-  .sm\:leading-brand-hero {
-    line-height: 56px;
-  }
-}
 
 /* OLB-specific aliases (for OLB-only pages) */
 .text-olb-hero { font-size: 40px; }
