@@ -1,56 +1,66 @@
-/* SDMO Product - SDMO Brand Colors & Theme */
+/* OLB Product - BECU Brand Colors & Theme */
 /* ========================================================================
-   SDMO PRODUCT CUSTOMIZATION
-   Replace all color values below with SDMO-specific brand colors
-   These are currently set to BECU defaults as a template
+   OLB/BECU SPECIFIC STYLING - DO NOT SHARE WITH OTHER PRODUCTS
+   This contains BECU's specific brand colors and styles
+   SDMO and other products should use their own product CSS file
 
    REFACTORED: Generic semantic classes (.text-foreground-default, etc.)
    have been moved to common.css to eliminate selector conflicts.
-   This file now contains ONLY CSS variables and SDMO-specific classes.
+   This file now contains ONLY CSS variables and OLB-specific classes.
    ======================================================================== */
 
-/* CUSTOMIZE: Replace these color hex values with SDMO brand colors */
+/* Define OLB brand colors as CSS variables for consistency */
 :root {
+  /* OLB-specific named colors (primary definitions) */
+  --olb-primary-brand: #007c89;
+  --olb-text-heading: #0d141c;
+  --olb-text-body: #192838;
+  --olb-text-support: #4d5f69;
+  --olb-text-error: #6e3a32;
+  --olb-bg-surface: #f4f5f5;
+  --olb-border-color: #7f909a;
+
   /* Semantic variable mapping for product-agnostic classes */
-  /* CUSTOMIZE ALL VALUES BELOW FOR SDMO BRAND */
-  --foreground-default: #0d141c; /* CUSTOMIZE */
-  --foreground-heading: #0d141c; /* CUSTOMIZE */
-  --foreground-copy: #192838; /* CUSTOMIZE */
-  --foreground-copy-support: #4d5f69; /* CUSTOMIZE */
-  --foreground-brand: #007c89; /* CUSTOMIZE */
-  --on-background-brand: #ffffff; /* CUSTOMIZE */
-  --link-default: #007c89; /* CUSTOMIZE */
-  --error-default: #6e3a32; /* CUSTOMIZE */
+  --foreground-default: var(--olb-text-heading);
+  --foreground-heading: var(--olb-text-heading);
+  --foreground-copy: var(--olb-text-body);
+  --foreground-copy-support: var(--olb-text-support);
+  --foreground-brand: var(--olb-primary-brand);
+  --on-background-brand: var(--background-page);
+  --link-default: var(--olb-primary-brand);
+  --error-default: var(--olb-text-error);
 
-  --background-page: #ffffff; /* CUSTOMIZE */
-  --background-surface-1: #ffffff; /* CUSTOMIZE */
-  --background-surface-2: #f4f5f5; /* CUSTOMIZE */
+  --background-page: #ffffff;
+  --background-surface-1: var(--background-page);
+  --background-surface-2: var(--olb-bg-surface);
 
-  --border-default: #7f909a; /* CUSTOMIZE */
-  --border-subtle: #eaebec; /* CUSTOMIZE */
-  --control-focus: #7f909a; /* CUSTOMIZE */
+  --border-default: var(--olb-border-color);
+  --border-subtle: #eaebec;
+  --control-focus: var(--olb-border-color);
 
-  /* SDMO-specific named colors (for explicit SDMO references) */
-  --sdmo-primary-brand: #007c89; /* CUSTOMIZE: SDMO primary brand color */
-  --sdmo-text-heading: #0d141c; /* CUSTOMIZE: SDMO heading text color */
-  --sdmo-text-body: #192838; /* CUSTOMIZE: SDMO body text color */
-  --sdmo-text-support: #4d5f69; /* CUSTOMIZE: SDMO support text color */
-  --sdmo-text-error: #6e3a32; /* CUSTOMIZE: SDMO error text color */
-  --sdmo-bg-surface: #f4f5f5; /* CUSTOMIZE: SDMO surface background */
-  --sdmo-border-color: #7f909a; /* CUSTOMIZE: SDMO border color */
-  --spinner-color: var(--sdmo-primary-brand);
+  /* Additional OLB brand colors */
+  --harbor: var(--olb-primary-brand);
+  --action-blue: #4470d6;
+  --becu-red: #d12a2e;
+  --dark-teal: #005460;
+  --error-red: #ab111a;
+  --error-bg: #f8d7da;
+  --error-border: #f1aeb5;
+  --error-text: #721c24;
+  --divider-color: #d5d7d9;
+  --warm-grey: #e3e1db;
+  --rain-grey: var(--border-subtle);
+  --spinner-color: var(--olb-primary-brand);
 
   /* Utility colors */
-  --bg-white: #ffffff;
+  --bg-white: var(--background-page);
   --text-black: #000000;
   --gray-disabled: #9ca3af;
   --gray-light: #d1d5db;
   --gray-dark: #333333;
-  --gray-dark-hover: #333333;
+  --gray-dark-hover: var(--gray-dark);
   --alert-dark: #654f0b;
   --error-red-alt: #dc3545;
-  --rain-grey: #eaebec;
-  --error-border: #f1aeb5;
 
   /* Shadow and overlay colors */
   --overlay-dark: rgba(0, 0, 0, 0.5);
@@ -59,60 +69,1437 @@
   --shadow-dark: rgba(0, 0, 0, 0.3);
 
   /* Alert/Info background colors (replacing arbitrary Tailwind values) */
-  --info-bg: #ebf2fa;  /* CUSTOMIZE */
-  --warning-bg: #fff0d4;  /* CUSTOMIZE */
-  --alert-bg: #fce6da;  /* CUSTOMIZE */
-  --focus-dark: #0d3960;  /* CUSTOMIZE */
+  --info-bg: #ebf2fa;
+  --warning-bg: #fff0d4;
+  --alert-bg: #fce6da;
+  --focus-dark: #0d3960;
 }
 
 /* ========================================================================
-   SDMO-SPECIFIC CLASSES
+   OLB-SPECIFIC UTILITY CLASSES
    NOTE: Generic utilities (.bg-warning, .text-brand-hero, etc.) are in common.css
-   This section contains ONLY SDMO-namespaced aliases for SDMO-only pages
+   This section contains ONLY OLB-namespaced aliases for backward compatibility
    ======================================================================== */
 
-/* SDMO-specific aliases (for SDMO-only pages) */
-.sdmo-text-foreground-default {
-  color: var(--sdmo-text-heading);
-}
+/* ========================================================================
+   CONSOLIDATED COMPONENT STYLES FROM davinci-styles.css
+   All OLB-specific component styling (header, nav, forms, footer, etc.)
+   ======================================================================== */
 
-.sdmo-text-foreground-heading {
-  color: var(--sdmo-text-heading);
-}
+/* DaVinci Login Page Styles */
+/* This file contains component-specific CSS for the BECU OLB login page */
+/* Font-family and colors inherit from common.css and olb-product.css */
 
-.sdmo-text-foreground-copy {
-  color: var(--sdmo-text-body);
-}
+/* All typography inherits Public Sans font-family from body */
+/* All colors use CSS variables from olb-product.css for consistency */
 
-.sdmo-text-foreground-copy-support {
-  color: var(--sdmo-text-support);
-}
+@layer components {
+  /* Font family for all elements */
+  * {
+    font-family:
+      "Public Sans",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Helvetica,
+      Arial,
+      sans-serif !important;
+  }
 
-.sdmo-text-foreground-brand {
-  color: var(--sdmo-primary-brand);
-}
+  body {
+    font-family:
+      "Public Sans",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Helvetica,
+      Arial,
+      sans-serif !important;
+  }
 
-.sdmo-bg-background-surface-2 {
-  background-color: var(--sdmo-bg-surface);
-}
+  /* Global focus styling - ensures all focusable elements use blue outline */
+  button:focus,
+  a:focus,
+  select:focus,
+  textarea:focus,
+  [tabindex]:focus {
+    outline: 2px solid #4470d6 !important;
+    outline-offset: 2px;
+  }
 
-.sdmo-border-default {
-  border-color: var(--sdmo-border-color);
-}
+  /* Inputs inside containers should not show focus outline - only the container should */
+  .input-container input:focus {
+    outline: none !important;
+  }
 
-/* Hover states for SDMO-namespaced product colors */
-.sdmo-bg-background-surface-2:hover {
-  background-color: var(--sdmo-bg-surface);
-}
+  /* Main content and footer areas should not show focus outline when clicked */
+  #main-content:focus,
+  #footer:focus {
+    outline: none;
+  }
 
-.sdmo-text-foreground-brand:hover {
-  color: var(--sdmo-primary-brand);
-}
+  /* Show outline only on keyboard focus - respects product CSS colors */
+  #main-content:focus-visible,
+  #main-content :focus-visible,
+  #footer:focus-visible,
+  #footer :focus-visible {
+    outline: 2px solid var(--action-blue-4470-d-6, #4470d6);
+    outline-offset: 2px;
+    border-radius: 2px;
+    box-shadow: none;
+  }
 
-.sdmo-bg-link-default {
-  background-color: var(--sdmo-primary-brand);
-}
+  /* Suppress outline on mouse click */
+  #main-content:focus:not(:focus-visible),
+  #main-content :focus:not(:focus-visible),
+  #footer:focus:not(:focus-visible),
+  #footer :focus:not(:focus-visible) {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 
-.sdmo-bg-link-default:hover {
-  background-color: var(--sdmo-primary-brand);
-}
+  /* === HEADER STYLES === */
+
+  /* Mobile menu button */
+  .mobile-menu-button:focus {
+    outline: 2px solid #4470d6;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Navigation links in header */
+  .header-nav-link {
+    padding: 15px 0.75rem;
+    font-family: "Public Sans", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 0.0125rem;
+  }
+
+  .header-nav-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-left: 0.0625rem;
+    margin-right: 0.5rem;
+  }
+
+  /* Base header styles */
+  .header-nav {
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    margin-bottom: 35px;
+    margin-left: 225.008px;
+    margin-right: 0px;
+    height: auto;
+  }
+
+  /* Navigation container */
+  .nav-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Fix flex container height */
+  .nav-container .flex {
+    align-items: center;
+    height: auto;
+  }
+
+  /* Logo link styles */
+  a.flex-shrink-0 {
+    display: inline-flex;
+    align-items: center;
+    height: auto;
+  }
+
+  /* Navigation items */
+  .nav-item {
+    display: flex;
+    align-items: center;
+    color: #4d5f69 !important;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 15px 0;
+  }
+
+  /* Hide desktop navigation items on mobile */
+  @media (max-width: 992px) {
+    .nav-item,
+    .header-nav-link {
+      display: none !important;
+    }
+  }
+
+  .nav-item:hover {
+    color: #4d5f69;
+    text-decoration: underline !important;
+  }
+
+  .nav-item:focus-visible {
+    outline: 2px solid #4470d6;
+    outline-offset: 2px;
+    border-radius: 2px;
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  /* Navigation text */
+  .nav-text {
+    margin-left: 0rem;
+    padding-right: 0.75rem;
+    color: #4d5f69;
+    font-family: "Public Sans", sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 0.0125rem;
+  }
+
+  /* Logo styles */
+  .logo {
+    aspect-ratio: 3.23;
+    object-fit: auto;
+    object-position: center;
+    width: 10.75rem;
+    height: 3.3125rem;
+    max-width: 100%;
+    padding-right: 2.375rem;
+    padding-top: 0.75rem;
+  }
+
+  /* Desktop logo specific styles */
+  .desktop-logo {
+    width: 10.75rem;
+    height: 3.3125rem;
+    padding-right: 2.375rem;
+    margin-top: 0;
+    max-width: 100%;
+    aspect-ratio: 3.23;
+    object-fit: auto;
+    object-position: center;
+    display: none !important;
+    /* Removed align-self: stretch to prevent height issues */
+  }
+
+  /* Show desktop logo only on screens wider than 993px */
+  @media (min-width: 993px) {
+    .desktop-logo {
+      display: block !important;
+    }
+    .mobile-logo {
+      display: none !important;
+    }
+  }
+
+  /* Custom responsive classes for 993px breakpoint */
+  .desktop-nav-hidden {
+    display: none !important;
+  }
+
+  .mobile-nav-hidden {
+    display: flex !important;
+  }
+
+  @media (max-width: 992px) {
+    .desktop-nav-hidden {
+      display: block !important;
+    }
+
+    .mobile-nav-hidden {
+      display: none !important;
+    }
+  }
+
+  /* Mobile menu styles */
+  .mobile-menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #ffffff;
+  }
+
+  /* Mobile menu styles */
+  @media (max-width: 992px) {
+    .header-nav {
+      margin-left: 0 !important;
+      width: 100%;
+      background-color: #d12a2e;
+      margin-bottom: 1.875rem;
+      height: 3.375rem;
+      padding: 8px 16px;
+    }
+
+    #header {
+      background-color: #d12a2e !important;
+    }
+
+    .logo {
+      padding: 0rem;
+      width: 5.0575625rem;
+      height: 1.5625rem;
+    }
+  }
+
+  /* Desktop responsive styles */
+  @media (min-width: 1080px) {
+    .header-nav {
+      margin-left: 14.063rem;
+    }
+  }
+
+  @media (min-width: 2080px) {
+    .header-nav {
+      margin-left: 26.563rem;
+    }
+  }
+
+  /* Mobile menu styles */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25.375rem;
+    height: 100vh;
+    background-color: #d12a2e;
+    z-index: 1000;
+    padding: 2rem;
+  }
+
+  .mobile-menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .mobile-menu-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .mobile-nav-item {
+    display: flex;
+    align-items: center;
+    color: #ffffff !important;
+    margin-top: 0.84375rem;
+    margin-bottom: 0.84375rem;
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 0.0125rem;
+    text-decoration: none;
+  }
+
+  .mobile-logo {
+    display: none !important;
+    width: 7.6875rem;
+    height: 2.375rem;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-bottom: 2.28125rem;
+  }
+
+  /* Mobile logo shows by default on screens smaller than 993px */
+  @media (max-width: 992px) {
+    .mobile-logo {
+      display: block !important;
+    }
+    .desktop-logo {
+      display: none !important;
+    }
+  }
+
+  /* Divider */
+  .vertical-divider {
+    border: 1px solid var(--divider-color);
+    background-color: var(--divider-color);
+    width: 1px;
+    height: 39.375rem;
+  }
+
+  @media (max-width: 991px) {
+    .vertical-divider {
+      width: 95%;
+      height: 1px;
+    }
+  }
+
+  /* Business section */
+  .business-section-container {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 0.0125rem;
+    color: var(--olb-text-body);
+  }
+
+  /* Business login button styling */
+  #business-login-button {
+    border-radius: 0.5rem;
+    height: 3.125rem;
+    padding: 0 0.9375rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 0.2px;
+    margin-top: 1.6rem;
+    max-width: 21.25rem;
+    border: 0.125rem solid var(--olb-text-support);
+    background-color: var(--bg-white);
+    color: var(--text-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  /* Business section classes */
+  .business-title {
+    font-size: 32px;
+    font-family: "Public Sans", sans-serif;
+    margin-bottom: 0 !important;
+    font-weight: 500;
+    line-height: 128%;
+    color: #192838;
+  }
+
+  .business-description {
+    font-size: 1rem;
+    line-height: 160%;
+    color: #192838;
+    letter-spacing: 0.0125rem;
+    margin-top: 0.75rem;
+    font-weight: 400;
+    font-family: "Public Sans", sans-serif;
+  }
+
+  .business-button {
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family: "Public Sans", sans-serif;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    margin-top: 1.6rem;
+    letter-spacing: 0.0125rem;
+    cursor: pointer;
+    max-width: 21.25rem;
+    height: 3.125rem;
+    color: #000000 !important;
+    padding: 0rem 0.9375rem;
+    border: 0.125rem solid #4d5f69 !important;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 160%;
+  }
+
+  .business-button:hover,
+  #business-login-button:hover {
+    border-radius: 8px;
+    border: 2px solid #4d5f69;
+    background: #f4f5f5;
+  }
+
+  .business-button:focus-visible {
+    outline: 2px solid #4470d6;
+    outline-offset: 2px;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+
+  /* Business link */
+  .business-link,
+  #business-enroll-button {
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    margin-top: 1.6rem;
+    color: #007c89 !important;
+    font-weight: 600;
+    line-height: 160%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+    width: fit-content;
+    position: relative;
+    font-variant-numeric: lining-nums tabular-nums;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.2s ease;
+  }
+
+  .business-link:hover,
+  #business-enroll-button:hover {
+    text-decoration: underline !important;
+    border-bottom-color: #007c89;
+    font-family: "Public Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 0.2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid transparent;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 4px;
+  }
+
+  .business-link:hover,
+  .business-link:focus {
+    color: #007c89;
+    outline: none;
+    border-bottom-color: #007c89;
+  }
+
+  .business-link:focus-visible {
+    outline: none;
+    border: 2px solid #4470d6;
+    border-radius: 2px;
+    padding: 2px;
+    box-shadow: none;
+    text-decoration: none;
+  }
+
+  /* === CONTENT STYLES === */
+
+  /* Main content container */
+  .main-content-container {
+    margin-left: 1.563rem;
+    margin-right: 1.563rem;
+    width: 100%;
+  }
+
+  @media (min-width: 992px) {
+    .main-content-container {
+      margin-left: 15.625rem;
+    }
+  }
+
+  @media (min-width: 1080px) {
+    .main-content-container {
+      margin-left: 15.625rem;
+    }
+  }
+
+  @media (min-width: 2080px) {
+    .main-content-container {
+      margin-left: 28.125rem;
+    }
+  }
+
+  /* Main title */
+  .main-title {
+    color: #192838;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    font-family:
+      "Public Sans",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 128%;
+  }
+
+  /* Login section */
+  .login-section {
+    display: flex;
+    gap: 1.875rem;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+
+  @media (max-width: 991px) {
+    .login-section {
+      flex-direction: column;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .login-section {
+      flex-direction: row;
+    }
+  }
+
+  /* Login form */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.4rem;
+    width: 22.625rem;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 991px) {
+    .login-form {
+      margin-top: 0.5rem;
+      width: 90%;
+    }
+  }
+
+  /* Form title */
+  .form-title {
+    color: #192838;
+    font-feature-settings:
+      "liga" off,
+      "clig" off;
+    font-family: "Public Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 128%;
+    margin-bottom: 0% !important;
+  }
+
+  /* Form labels */
+  .form-label {
+    color: #4d5f69;
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    letter-spacing: 0.0125rem;
+    margin-top: 1.6rem;
+    font-family:
+      "Public Sans",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 160%;
+  }
+
+  /* Input containers */
+  .input-container {
+    border: 1px solid #4d5f69 !important;
+    background: #fff !important;
+    display: flex;
+    align-items: center;
+    gap: 0.1875rem;
+    padding: 0.5625rem 0.75rem !important;
+    height: 2.75rem !important;
+    max-width: 21.25rem;
+    box-sizing: border-box;
+    margin-top: 0.125rem;
+  }
+
+  .input-container:focus-within {
+    outline: none;
+    border: 2px solid #4470d6 !important;
+    padding: calc(0.5625rem - 1px) calc(0.75rem - 1px) !important;
+  }
+
+  .input-container.is-invalid,
+  .input-container.error-border {
+    border: 2px solid #ab111a !important;
+    padding: calc(0.5625rem - 1px) calc(0.75rem - 1px);
+  }
+
+  .input-container.error-border:focus-within {
+    border: 2px solid #ab111a !important;
+    outline: none;
+  }
+
+  /* Input fields */
+  .input-field {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    color: var(--olb-text-support);
+    outline: none;
+  }
+
+  /* Input icons */
+  .input-icon {
+    aspect-ratio: 1;
+    object-fit: auto;
+    object-position: center;
+    width: 1.5rem;
+    cursor: pointer;
+  }
+
+  .input-icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .input-icon-button:focus {
+    outline: 2px solid #4470d6;
+  }
+
+  /* Submit button */
+  .submit-button {
+    font-feature-settings:
+      "clig" off,
+      "liga" off;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    background-color: var(--olb-primary-brand);
+    margin-top: 1.875rem;
+    color: var(--bg-white);
+    white-space: nowrap;
+    letter-spacing: 0.0125rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 160%;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1.875rem;
+    max-width: 21.25rem;
+    height: 3.125rem;
+    padding: 0rem 0.9375rem;
+    display: flex;
+  }
+
+  .submit-button:hover {
+    background-color: var(--dark-teal);
+  }
+
+  .submit-button:focus-visible {
+    outline: none;
+    border: 2px solid #4470d6;
+    border-radius: 2px;
+    padding: 2px;
+    box-shadow: none;
+  }
+
+  .submit-button:disabled {
+    border-radius: 8px;
+    background: var(--gray-disabled);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  /* Forgot links */
+  .forgot-link {
+    color: #007c89 !important;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 0.2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    margin: 0;
+    border-bottom: 1px solid transparent;
+  }
+
+  .forgot-link + .forgot-link {
+    margin-top: 0.5rem;
+  }
+
+  .forgot-link:last-of-type {
+    margin-bottom: 0.875rem;
+  }
+
+  .forgot-link:hover,
+  .forgot-link:focus {
+    color: #007c89 !important;
+    outline: none;
+    border-bottom-color: #007c89 !important;
+  }
+
+  .forgot-link:focus-visible {
+    outline: none;
+    border: 2px solid #4470d6;
+    border-radius: 2px;
+    padding: 2px;
+    box-shadow: none;
+    text-decoration: none;
+  }
+
+  /* Info text */
+  .info-text {
+    color: #4d5f69;
+    letter-spacing: 0.0125rem;
+    margin-bottom: 0.9375rem;
+    font-family:
+      "Public Sans",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.625rem;
+    margin-top: 0.3rem;
+  }
+
+  .info-text-link {
+    font-weight: 400;
+    text-decoration: underline;
+    letter-spacing: 0.0125rem;
+    color: #007c89;
+    transition: text-decoration-thickness 0.2s ease;
+    text-underline-offset: 0.25rem;
+  }
+
+  .info-text-link:hover {
+    color: #007c89;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 0.25rem;
+  }
+
+  /* Divider */
+  .divider {
+    border: 1px solid #d5d7d9;
+    background-color: #d5d7d9;
+    width: 1px;
+    height: 39.375rem;
+  }
+
+  @media (max-width: 991px) {
+    .divider {
+      width: 95%;
+      height: 1px;
+    }
+  }
+
+  /* Business section */
+  .business-section {
+    align-self: start;
+    display: flex;
+    margin-top: 0.5rem;
+    flex-direction: column;
+    font-size: 1rem;
+    color: #192838;
+    font-weight: 600;
+    line-height: 160%;
+  }
+
+  @media (max-width: 991px) {
+    .business-section {
+      margin-right: 0.625rem;
+      padding-right: 2.125rem;
+      margin-top: 0rem;
+    }
+  }
+
+  /* Error styles - Bootstrap alert-danger matching */
+  .error-message-container {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex !important;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #f1aeb5;
+    border-radius: 0.375rem;
+    background-color: #f8d7da;
+    color: #721c24;
+    font-family: "Public Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    position: relative;
+  }
+
+  /* When error container should be hidden */
+  .error-message-container:empty {
+    display: none !important;
+  }
+
+  .error-message-container .error-icon-svg {
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .error-message-container .error-icon-svg svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Fallback for Bootstrap icon if it loads */
+  .error-message-container .bi-exclamation-triangle {
+    flex-shrink: 0;
+    margin-right: 0.5rem !important;
+    font-size: 1.5rem !important;
+    color: var(--error-red-alt) !important;
+  }
+
+  .error-message-container .error-content {
+    flex: 1;
+  }
+
+  .error-message-container strong {
+    font-weight: 700;
+    color: #721c24;
+  }
+
+  .text-error {
+    color: #ab111a;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    font-family: "Public Sans", sans-serif;
+    line-height: 1.4;
+  }
+
+  .error-border {
+    border: 2px solid #ab111a !important;
+    padding: calc(0.5625rem - 1px) calc(0.75rem - 1px) !important;
+  }
+
+  .error-border:focus-within {
+    border: 2px solid #ab111a !important;
+    outline: none !important;
+  }
+
+  /* === FOOTER STYLES === */
+
+  /* Footer link text color - RGB(77, 95, 105) */
+  .text-stone-text {
+    color: #4d5f69 !important;
+  }
+
+  /* Footer links styling to match production */
+  .footer-link,
+  .footer-columns a {
+    color: #4d5f69;
+    font-family:
+      "Public Sans",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.0125em;
+    text-decoration: none;
+  }
+
+  .footer-link:hover,
+  .footer-columns a:hover {
+    text-decoration: underline !important;
+  }
+
+  /* Footer columns styling */
+  .footer-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9375rem;
+  }
+
+  /* Footer container */
+  .footer-container {
+    background-color: var(--rain-eaebec, #eaebec);
+    padding-left: 1.625rem;
+    padding-top: 0.9375rem;
+    padding-right: 1.25rem;
+    padding-bottom: 2rem;
+  }
+
+  @media (min-width: 992px) {
+    .footer-container {
+      padding-top: 1.875rem !important;
+      padding-left: 250px !important;
+    }
+  }
+
+  /* Footer content alignment */
+  .footer-container footer {
+    padding-left: 0px !important;
+    padding-right: 1.25rem !important;
+    margin-left: 0px !important;
+  }
+
+  .footer-container footer .footer-content,
+  .footer-container footer > div {
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+  }
+
+  .footer-container footer > * {
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+  }
+
+  /* Footer text styles */
+  .footer-text {
+    font-family: "Public Sans", sans-serif;
+    font-size: 0.875rem;
+    color: #4d5f69;
+    line-height: 1.5;
+  }
+
+  /* === LOADING STATE STYLES === */
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.6s linear infinite;
+    margin-right: 8px;
+  }
+
+  .submit-button.processing {
+    position: relative;
+    cursor: not-allowed;
+    opacity: 0.8;
+  }
+
+  .submit-button.processing::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.6s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  /* === UTILITY STYLES === */
+
+  /* Note: .visually-hidden moved to common.css to eliminate duplication */
+
+  /* Modal styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--overlay-dark);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal-overlay.hidden {
+    display: none !important;
+  }
+
+  .modal {
+    width: 553px;
+    height: auto;
+    min-height: 226px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow:
+      0px 0px 16px 0px rgba(0, 0, 0, 0.1),
+      0px 12px 32px 0px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: auto;
+    position: relative;
+  }
+
+  @media (max-width: 991px) {
+    .modal {
+      width: 100%;
+      margin: 0;
+      padding: 20px;
+    }
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .modal-header h2 {
+    color: #192838;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings:
+      "liga" off,
+      "clig" off;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 128%;
+    margin: 0;
+  }
+
+  .modal-close-button {
+    height: 44px;
+    width: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    margin: -8px -8px 0 0;
+    border-radius: 4px;
+  }
+
+  .modal-close-button:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  .modal-close-button:focus-visible {
+    outline: none;
+    box-shadow:
+      0px 0px 0px 3px #fff,
+      0px 0px 0px 5px #4470d6;
+  }
+
+  .modal-body {
+    width: 100%;
+  }
+
+  .modal-body p {
+    margin: 0;
+    padding-bottom: 16px;
+    color: #4d5f69;
+    font-feature-settings:
+      "liga" off,
+      "clig" off;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  @media (max-width: 991px) {
+    .modal-footer {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  .modal-button {
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #007c89;
+    color: #fff;
+    font-feature-settings:
+      "liga" off,
+      "clig" off;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 0.2px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .modal-button:hover {
+    background: #005460;
+  }
+
+  .modal-button:focus-visible {
+    outline: none;
+    box-shadow:
+      0px 0px 0px 3px #fff,
+      0px 0px 0px 5px #4470d6;
+  }
+
+  @media (max-width: 991px) {
+    .modal-button {
+      width: 100%;
+      min-height: 44px;
+      padding: 12px 16px;
+    }
+  }
+
+  /* Tooltip styles */
+  .tooltip {
+    position: relative;
+  }
+
+  .tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--olb-text-body);
+    color: var(--bg-white);
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.2s ease-in-out,
+      visibility 0.2s;
+    pointer-events: none;
+  }
+
+  .tooltip:hover::after,
+  .tooltip:focus::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* === ADDITIONAL STYLES FROM HTML === */
+
+  /* Body is now visible immediately since Tailwind CSS is included directly */
+  body {
+    visibility: visible;
+  }
+
+  /* Custom scrollbar */
+  .modal-content {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .modal-content::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Navigation and layout utilities */
+  .nav-links {
+    margin-left: 0;
+  }
+
+  /* Footer content styles */
+  .footer-content {
+    gap: 1.25rem;
+  }
+
+  .footer-info {
+    gap: 46px;
+  }
+
+  .footer-logos {
+    gap: 46px;
+  }
+
+  /* Footer padding */
+  .footer-padding {
+    padding: 2rem 1.25rem;
+  }
+
+  /* Navigation elements */
+
+  /* Force desktop layout margins */
+  @media (min-width: 992px) {
+    nav#header {
+      margin-left: 225.008px !important;
+      margin-bottom: 35px !important;
+      margin-right: 0px !important;
+      padding: 8px 16px !important;
+      background-color: transparent !important;
+    }
+
+    div#main-content > div {
+      margin-left: 250px !important;
+      max-width: 55.563rem !important;
+      width: 55.563rem !important;
+    }
+  }
+
+  /* Mobile styles for header */
+  #header {
+    background-color: var(--becu-red);
+    margin-left: 0;
+    margin-bottom: 30px;
+    padding: 8px 16px;
+  }
+
+  @media (max-width: 991px) {
+    #header {
+      height: 3.375rem;
+    }
+  }
+
+  /* Desktop styles for header */
+  @media (min-width: 993px) {
+    #header {
+      background-color: transparent !important;
+      margin-left: 225.008px !important;
+      margin-bottom: 35px !important;
+      margin-right: 0px !important;
+      width: auto !important;
+      padding: 8px 16px !important;
+    }
+  }
+
+  /* Additional responsive styles */
+  @media (max-width: 991px) {
+    .flex.justify-between {
+      flex-wrap: wrap;
+    }
+
+    #login-form {
+      width: 90% !important;
+      margin-top: 0.5rem !important;
+    }
+
+    .business-section {
+      padding-right: 2.125rem !important;
+      margin-right: 0.625rem !important;
+    }
+  }
+
+  /* Navigation link focus styles */
+  .hidden.md\:flex a:focus-visible {
+    outline: 2px solid #4470d6;
+    outline-offset: 2px;
+    border-radius: 2px;
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  /* Form input styles */
+  #ctlSignon_txtUserID:focus,
+  #ctlSignon_txtPassword:focus {
+    outline: none;
+  }
+
+  /* Button clicked states */
+  .submit-button.clicked {
+    background-color: #000000;
+    border-radius: 8px;
+    background: #000000;
+    box-shadow:
+      0px 0px 0px 3px #ffffff,
+      0px 0px 0px 5px #4470d6;
+  }
+
+  .business-button.clicked {
+    border-radius: 8px;
+    border: 2px solid #4d5f69;
+    background: #e3e1db;
+    box-shadow:
+      0px 0px 0px 3px #ffffff,
+      0px 0px 0px 5px #4470d6;
+  }
+
+  /* Note: Password reveal rules moved to common.css @layer base */
+
+  /* Bootstrap-compatible container */
+  .container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  /* Harbor color utilities */
+  .text-harbor {
+    color: var(--harbor) !important;
+  }
+
+  .bg-harbor {
+    background-color: var(--harbor) !important;
+  }
+
+  .border-harbor {
+    border-color: var(--harbor) !important;
+  }
+
+  .hover\:text-harbor:hover {
+    color: var(--harbor) !important;
+  }
+
+  .hover\:border-harbor:hover {
+    border-color: var(--harbor) !important;
+  }
+
+  .focus\:text-harbor:focus {
+    color: var(--harbor) !important;
+  }
+
+  .focus\:border-harbor:focus {
+    border-color: var(--harbor) !important;
+  }
+
+  /* ======================================================================== */
+  /* END TAILWIND CSS UTILITIES                                              */
+  /* ======================================================================== */
+
+  /* JavaScript state classes moved to common.css for reuse across products */
+} /* End @layer components */
