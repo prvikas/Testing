@@ -1503,3 +1503,29 @@
 
   /* JavaScript state classes moved to common.css for reuse across products */
 } /* End @layer components */
+
+/* ========================================================================
+   OVERRIDE DYNAMICALLY INJECTED STYLES
+   These rules restore the intended styling after external CSS injection
+   that resets padding/margin globally and modifies body styles
+   ======================================================================== */
+
+/* Restore body background and font-smoothing to match Tailwind classes */
+body {
+  background-color: #ffffff !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Ensure container-fluid maintains its padding */
+.container-fluid {
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+}
+
+/* Ensure nav-container and other critical spacing is preserved */
+.nav-container {
+  padding: 0.5rem 1rem !important;
+}
